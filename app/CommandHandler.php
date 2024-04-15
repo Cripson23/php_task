@@ -70,13 +70,15 @@ class CommandHandler
                 HawkingTaskThree::listFilteredFiles();
                 break;
             default:
-                echo 'Неизвестная команда';
+                echo "Неизвестная команда.\n";
         }
     }
 
     /**
-     * @param array $argv
-     * @return array
+     * Определяет переданные в команду параметры
+     *
+     * @param array $argv Массив аргументов командной строки
+     * @return array Массив с обработанными аргументами
      */
     private static function parseParameters(array $argv): array {
         $params = [];

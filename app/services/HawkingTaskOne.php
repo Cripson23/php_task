@@ -11,9 +11,34 @@ use app\general\Logger;
 
 final class HawkingTaskOne
 {
+    /**
+     * Интерфейс для управления таблицами в базе данных.
+     * Предоставляет методы для проверки существования таблиц и их создания.
+     *
+     * @var TableManagerInterface
+     */
     private TableManagerInterface $tableManager;
+
+    /**
+     * Название таблицы, с которой ведется работа.
+     *
+     * @var string
+     */
     private string $tableName;
+
+    /**
+     * Количество записей для обработки или вставки в таблицу.
+     *
+     * @var int
+     */
     private int $recordCount;
+
+    /**
+    * Экземпляр подключения к базе данных.
+    * Используется для выполнения операций с базой данных.
+    *
+    * @var Database
+    */
     private Database $db;
 
 	/**

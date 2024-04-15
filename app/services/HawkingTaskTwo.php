@@ -11,8 +11,27 @@ use app\interfaces\TableManagerInterface;
 
 final class HawkingTaskTwo
 {
+    /**
+     * Интерфейс для управления таблицами в базе данных.
+     * Предоставляет методы для проверки существования таблиц и их создания.
+     *
+     * @var TableManagerInterface
+     */
     private TableManagerInterface $tableManager;
+
+    /**
+     * Количество записей для обработки или вставки в таблицу.
+     *
+     * @var int
+     */
     private int $recordCount;
+
+    /**
+     * Экземпляр подключения к базе данных.
+     * Используется для выполнения операций с базой данных.
+     *
+     * @var Database
+     */
     private Database $db;
 
     /**
