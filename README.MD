@@ -10,8 +10,9 @@
     - ```sudo chown -R www-data:www-data .```
     - ```sudo chmod 775 -R .```
   - В продуктовой среде:
-    - ```sudo find . -type d -exec chmod 750 {} \; && sudo find . -type f -exec chmod 640 {} \;```
-- Скопировать файл **.env.example** в корневую директорию и сохранить с названием **.env**.
+      - ```sudo chown -R www-data:www-data .``` 
+      - ```sudo find . -type d -exec chmod 750 {} \; && sudo find . -type f -exec chmod 640 {} \;```
+- Скопировать файл **.env.example** в корневую директорию и сохранить с именем **.env**.
 - Убедиться что на хост-машине не занят порт **3306** каким-либо из сервисов.
 - Запустить сборку и запуск частей приложения в зависимости от окружения:
   - ```docker-compose -f docker-compose.dev.yml up --build -d``` **(dev)**.
