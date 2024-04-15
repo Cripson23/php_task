@@ -1,0 +1,37 @@
+# Using PHP 8.1 as base image
+FROM php:8.1-fpm
+
+# Install common packages
+RUN apt-get update && apt-get install -y curl unzip zip \
+    && docker-php-ext-install -j$(nproc) mysqli pdo pdo_mysql \
+    && mkdir -p /var/log/php-fpm
+
+# Copy php-fpm config
+COPY php-fpm/custom-php-fpm.conf /usr/local/etc/php-fpm.conf
+
+# Install Composer globally
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+
+# Setup work directory
+WORKDIR /var/www
+
+# Copy project files to container and set owner
+COPY . /var/www
+RUN chown -R www-data:www-data /var/www
+
+# Install project dependencies as www-data
+USER www-data
+
+RUN composer install --no-interaction
+
+USER root
+
+# Set proper permissions based on environment
+RUN find /var/www -type d -exec chmod 775 {} \; \
+        && find /var/www -type f -exec chmod 664 {} \; \
+        && chmod -R 775 /var/log
+
+# Expose port 9000
+EXPOSE 9000
+
+CMD ["php-fpm"]

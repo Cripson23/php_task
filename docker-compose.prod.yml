@@ -1,0 +1,33 @@
+version: '3'
+services:
+  php-fpm:
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+    volumes:
+      - .:/var/www
+      - /var/www/vendor
+      - ./php-fpm/logs:/var/log/php-fpm
+    depends_on:
+      - mysql
+    networks:
+      - app-network
+  mysql:
+    image: mysql:8
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysqldata:/var/lib/mysql
+    networks:
+      - app-network
+volumes:
+  mysqldata:
+
+networks:
+  app-network:
+    driver: bridge
