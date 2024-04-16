@@ -6,6 +6,8 @@ use PDO;
 
 /**
  * Интерфейс для подключения к базе данных.
+ *
+ * @package app\interfaces
  */
 interface DatabaseInterface {
     /**

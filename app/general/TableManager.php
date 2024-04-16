@@ -5,6 +5,11 @@ namespace app\general;
 use app\interfaces\DatabaseInterface;
 use app\interfaces\TableManagerInterface;
 
+/**
+ * Класс TableManager реализует методы для работы с базой данных.
+ *
+ * @package app\general
+ */
 class TableManager implements TableManagerInterface
 {
     private DatabaseInterface $db;

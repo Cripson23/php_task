@@ -9,6 +9,11 @@ use app\interfaces\TableManagerInterface;
 use app\general\Database;
 use app\general\Logger;
 
+/**
+ * Класс для решения Задачи №1
+ *
+ * @package app\services
+ */
 final class HawkingTaskOne
 {
     /**

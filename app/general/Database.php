@@ -6,6 +6,12 @@ use PDO;
 use PDOException;
 use app\interfaces\DatabaseInterface;
 
+/**
+ * Класс Database управляет подключениями к базе данных через PDO.
+ * Реализует шаблон проектирования "Одиночка" для обеспечения только одного экземпляра класса.
+ *
+ * @package app\general
+ */
 class Database implements DatabaseInterface {
 	/**
 	 * Статическая переменная для хранения единственного экземпляра класса.

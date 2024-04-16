@@ -2,6 +2,11 @@
 
 namespace app\general;
 
+/**
+ * Класс Logger реализует методы для логирования в приложении.
+ *
+ * @package app\general
+ */
 class Logger
 {
 	/**

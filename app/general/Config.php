@@ -3,7 +3,9 @@
 namespace app\general;
 
 /**
- * Класс конфигурации для приложения.
+ * Класс параметров конфигурации приложения.
+ *
+ * @package app\general
  */
 class Config
 {

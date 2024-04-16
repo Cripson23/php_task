@@ -4,6 +4,11 @@ namespace app\services;
 
 use app\general\Logger;
 
+/**
+ * Класс для решения Задачи №3
+ *
+ * @package app\services
+ */
 class HawkingTaskThree
 {
     /**

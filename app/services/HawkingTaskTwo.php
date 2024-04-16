@@ -9,6 +9,11 @@ use app\general\Logger;
 use app\general\TableManager;
 use app\interfaces\TableManagerInterface;
 
+/**
+ * Класс для решения Задачи №2
+ *
+ * @package app\services
+ */
 final class HawkingTaskTwo
 {
     /**

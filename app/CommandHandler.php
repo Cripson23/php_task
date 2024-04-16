@@ -6,6 +6,11 @@ use app\services\HawkingTaskOne;
 use app\services\HawkingTaskThree;
 use app\services\HawkingTaskTwo;
 
+/**
+ * Класс для управления консольными вызовами функционала приложения
+ *
+ * @package app
+ */
 class CommandHandler
 {
     /**
